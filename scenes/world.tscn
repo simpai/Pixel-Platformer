@@ -1,0 +1,279 @@
+[gd_scene load_steps=3 format=3 uid="uid://3rkbtqyh3tyc"]
+
+[ext_resource type="PackedScene" uid="uid://bxllnub87vmlq" path="res://scenes/block.tscn" id="1_p6nio"]
+[ext_resource type="PackedScene" uid="uid://drh37855jbrkn" path="res://scenes/player.tscn" id="2_6atan"]
+
+[node name="World" type="Node2D"]
+
+[node name="Block" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(18, 108)
+
+[node name="Block2" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(54, 108)
+
+[node name="Block3" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(126, 90)
+
+[node name="Block4" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(108, 90)
+
+[node name="Block5" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(108, 180)
+
+[node name="Block6" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(90, 180)
+
+[node name="Block7" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(324, 90)
+
+[node name="Block14" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(288, 90)
+
+[node name="Block15" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(270, 90)
+
+[node name="Block16" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(36, 108)
+
+[node name="Block8" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(306, 90)
+
+[node name="Block9" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(126, 180)
+
+[node name="Block10" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(72, 180)
+
+[node name="Block17" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(36, 180)
+
+[node name="Block18" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(18, 180)
+
+[node name="Block19" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(54, 180)
+
+[node name="Block20" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(0, 180)
+
+[node name="Block37" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-18, 180)
+
+[node name="Block38" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-36, 180)
+
+[node name="Block39" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-54, 180)
+
+[node name="Block40" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-90, 180)
+
+[node name="Block41" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-108, 180)
+
+[node name="Block42" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-72, 180)
+
+[node name="Block43" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 180)
+
+[node name="Block44" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 162)
+
+[node name="Block45" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 144)
+
+[node name="Block46" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 126)
+
+[node name="Block47" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 108)
+
+[node name="Block48" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 90)
+
+[node name="Block49" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 72)
+
+[node name="Block50" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 54)
+
+[node name="Block51" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 36)
+
+[node name="Block52" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 18)
+
+[node name="Block53" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, 0)
+
+[node name="Block54" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -18)
+
+[node name="Block55" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 180)
+
+[node name="Block56" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 162)
+
+[node name="Block57" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 144)
+
+[node name="Block58" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 126)
+
+[node name="Block59" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 108)
+
+[node name="Block60" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 90)
+
+[node name="Block61" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 72)
+
+[node name="Block62" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 54)
+
+[node name="Block63" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 36)
+
+[node name="Block64" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 18)
+
+[node name="Block65" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, 0)
+
+[node name="Block66" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -18)
+
+[node name="Block67" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -36)
+
+[node name="Block68" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -54)
+
+[node name="Block69" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -72)
+
+[node name="Block70" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -90)
+
+[node name="Block71" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -108)
+
+[node name="Block72" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -126)
+
+[node name="Block73" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -144)
+
+[node name="Block74" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -162)
+
+[node name="Block75" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -180)
+
+[node name="Block76" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -198)
+
+[node name="Block77" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -216)
+
+[node name="Block78" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(432, -234)
+
+[node name="Block79" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -36)
+
+[node name="Block80" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -54)
+
+[node name="Block81" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -72)
+
+[node name="Block82" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -90)
+
+[node name="Block83" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -108)
+
+[node name="Block84" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -126)
+
+[node name="Block85" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -144)
+
+[node name="Block86" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -162)
+
+[node name="Block87" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -180)
+
+[node name="Block88" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -198)
+
+[node name="Block89" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -216)
+
+[node name="Block90" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(-126, -234)
+
+[node name="Block21" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(252, 180)
+
+[node name="Block22" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(234, 180)
+
+[node name="Block23" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(270, 180)
+
+[node name="Block24" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(216, 180)
+
+[node name="Block25" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(180, 180)
+
+[node name="Block26" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(162, 180)
+
+[node name="Block27" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(198, 180)
+
+[node name="Block28" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(144, 180)
+
+[node name="Block29" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(396, 180)
+
+[node name="Block30" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(378, 180)
+
+[node name="Block31" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(414, 180)
+
+[node name="Block32" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(360, 180)
+
+[node name="Block33" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(324, 180)
+
+[node name="Block34" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(306, 180)
+
+[node name="Block35" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(342, 180)
+
+[node name="Block36" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(288, 180)
+
+[node name="Block11" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(144, 90)
+
+[node name="Block12" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(252, 90)
+
+[node name="Block13" parent="." instance=ExtResource("1_p6nio")]
+position = Vector2(72, 108)
+
+[node name="Player" parent="." instance=ExtResource("2_6atan")]
+position = Vector2(56, 44)
