@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3 uid="uid://di6tyo7r40ewb"]
+
+[ext_resource type="Script" path="res://resources/Player_data.gd" id="1_wx6kt"]
+[ext_resource type="SpriteFrames" uid="uid://d0d7vvj887xvq" path="res://resources/skin/playerSkinPink.tres" id="2_fhmsq"]
+
+[resource]
+script = ExtResource("1_wx6kt")
+spriteFrames = ExtResource("2_fhmsq")
+speed = 200.0
+jumpVelocity = -300.0
+maxAirJump = 1
+terminalVelocity = 400.0
+moveAccel = 200
+moveDecel = 100

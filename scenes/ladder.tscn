@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyp7f18tu8ung"]
+
+[ext_resource type="Texture2D" uid="uid://qm322pgdnlfv" path="res://art/tilemap_packed.png" id="1_jqp0n"]
+[ext_resource type="Script" path="res://scenes/ladder.gd" id="1_lgbuy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sppvm"]
+size = Vector2(16, 18)
+
+[node name="ladder" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_lgbuy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jqp0n")
+centered = false
+region_enabled = true
+region_rect = Rect2(198, 54, 18, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 9)
+shape = SubResource("RectangleShape2D_sppvm")

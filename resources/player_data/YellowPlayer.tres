@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerCharacteristics" load_steps=3 format=3 uid="uid://dujym4n3a42td"]
+
+[ext_resource type="Script" path="res://resources/Player_data.gd" id="1_522d7"]
+[ext_resource type="SpriteFrames" uid="uid://cpce5dn64x25y" path="res://resources/skin/playerSkinYellow.tres" id="2_6nbbq"]
+
+[resource]
+script = ExtResource("1_522d7")
+speed = 100.0
+jumpVelocity = -250.0
+maxAirJump = 2
+spriteFrames = ExtResource("2_6nbbq")
+terminalVelocity = 400.0
+moveAccel = 200
+moveDecel = 100

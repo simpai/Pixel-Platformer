@@ -1,23 +1,16 @@
 extends CharacterBody2D
 
-@export var speed : float = 100
-@export var jumpVelocity : float = -250.0
-@export var maxAirJump : int = 2
-@export var spriteFrames = load("res://resources/playerSkinPink.tres")
+class_name Player
+
+@export var data : PlayerData
 @export var playerId = "1p_"
-var terminalVelocity : float = 400
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var airJumpCount:int = 0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var moveAccel = 200
-var moveDecel = 100
-
 var justLanded : bool = false
 	
 func _ready():
-	$AnimatedSprite2D.sprite_frames = spriteFrames
+	$AnimatedSprite2D.sprite_frames = data.spriteFrames
 	$AnimatedSprite2D.play("Idle")
 	
 
@@ -30,10 +23,10 @@ func _physics_process(delta):
 	if direction != 0:
 		$AnimatedSprite2D.flip_h = direction > 0
 		$AnimatedSprite2D.play("Run")
-		velocity.x = move_toward(velocity.x, speed * direction, moveAccel*delta)
+		velocity.x = move_toward(velocity.x, data.speed * direction, data.moveAccel*delta)
 	else:
 		$AnimatedSprite2D.play("Idle")
-		velocity.x = move_toward(velocity.x, 0, moveDecel*delta)
+		velocity.x = move_toward(velocity.x, 0, data.moveDecel*delta)
 	
 	var was_in_air = not is_on_floor()
 	move_and_slide()
@@ -45,7 +38,7 @@ func _physics_process(delta):
 func apply_gravity(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y = move_toward(velocity.y, terminalVelocity, gravity * delta)
+		velocity.y = move_toward(velocity.y, data.terminalVelocity, gravity * delta)
 
 func apply_jump():	
 	if is_on_floor():
@@ -58,7 +51,10 @@ func apply_jump():
 
 	if Input.is_action_pressed(playerId+"jump"):
 		if is_on_floor():
-			velocity.y = jumpVelocity
-		elif velocity.y > 0 and airJumpCount < maxAirJump:
+			velocity.y = data.jumpVelocity
+		elif velocity.y > 0 and airJumpCount < data.maxAirJump:
 			airJumpCount += 1
-			velocity.y = jumpVelocity
+			velocity.y = data.jumpVelocity
+
+func hit():
+	queue_free()

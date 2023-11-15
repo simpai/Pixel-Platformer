@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://drh37855jbrkn"]
+[gd_scene load_steps=5 format=3 uid="uid://drh37855jbrkn"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_i8bog"]
-[ext_resource type="SpriteFrames" uid="uid://cpce5dn64x25y" path="res://resources/playerSkinYellow.tres" id="2_3m7ow"]
+[ext_resource type="Resource" uid="uid://dujym4n3a42td" path="res://resources/player_data/YellowPlayer.tres" id="2_htqqg"]
+[ext_resource type="SpriteFrames" uid="uid://cpce5dn64x25y" path="res://resources/skin/playerSkinYellow.tres" id="3_t3881"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8sfs"]
-size = Vector2(14, 18)
+size = Vector2(14, 14)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_i8bog")
+data = ExtResource("2_htqqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_3m7ow")
+sprite_frames = ExtResource("3_t3881")
 animation = &"Idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_p8sfs")
