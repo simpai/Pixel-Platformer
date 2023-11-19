@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_wx6kt")
 spriteFrames = ExtResource("2_fhmsq")
-speed = 200.0
+speed = 100.0
 jumpVelocity = -300.0
 maxAirJump = 1
 terminalVelocity = 400.0
 moveAccel = 200
-moveDecel = 100
+moveDecel = 300

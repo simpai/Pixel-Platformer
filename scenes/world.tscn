@@ -19,7 +19,7 @@ position = Vector2(252, 90)
 
 [node name="Player2" parent="." instance=ExtResource("2_6atan")]
 z_index = 10
-position = Vector2(111, 88)
+position = Vector2(288, 90)
 data = ExtResource("3_ihdyk")
 playerId = "2p_"
 
@@ -51,7 +51,7 @@ position = Vector2(126, 162)
 position = Vector2(144, 162)
 
 [node name="spike28" parent="Spikes" instance=ExtResource("5_ikfb0")]
-position = Vector2(288, 126)
+position = Vector2(90, 126)
 
 [node name="spike7" parent="Spikes" instance=ExtResource("5_ikfb0")]
 position = Vector2(234, 162)

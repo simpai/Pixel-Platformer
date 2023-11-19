@@ -8,4 +8,4 @@ class_name PlayerData
 @export var maxAirJump : int = 2
 @export var terminalVelocity : float = 400
 @export var moveAccel = 200
-@export var moveDecel = 100
+@export var moveDecel = 200

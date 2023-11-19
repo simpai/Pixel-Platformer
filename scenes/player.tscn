@@ -20,3 +20,10 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_p8sfs")
+
+[node name="LadderCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 13)
+target_position = Vector2(0, -17)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
