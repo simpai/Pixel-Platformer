@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3rkbtqyh3tyc"]
+[gd_scene load_steps=10 format=3 uid="uid://3rkbtqyh3tyc"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_ov652"]
 [ext_resource type="PackedScene" uid="uid://drh37855jbrkn" path="res://scenes/player.tscn" id="2_6atan"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/level1_tile_map.tscn" id="5_l451e"]
 [ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/ladder.tscn" id="6_yhgsp"]
 [ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/walking_enemy.tscn" id="7_1iyqc"]
+[ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/moving_spike_enemy.tscn" id="8_ydt64"]
+
+[sub_resource type="Curve2D" id="Curve2D_tfk8g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 126, 0, 0, 0, 0, 0, 126, 54, 0, 0, 0, 0, 0, 54, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ov652")
@@ -141,3 +148,7 @@ position = Vector2(198, 54)
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("7_1iyqc")]
 position = Vector2(180, 126)
+
+[node name="MovingSpikeEnemy" parent="." instance=ExtResource("8_ydt64")]
+position = Vector2(252, -18)
+curve = SubResource("Curve2D_tfk8g")
