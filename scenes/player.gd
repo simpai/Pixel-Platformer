@@ -36,7 +36,7 @@ func is_on_ladder():
 
 	return false
 
-func clime_state(input:Vector2, delta):
+func clime_state(input:Vector2, _delta):
 	if not is_on_ladder():
 		print("To move state")
 		state = MOVE

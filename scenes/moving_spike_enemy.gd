@@ -1,17 +1,38 @@
+@tool
 extends Path2D
-@onready var path_follow_2d = $PathFollow2D
 
-@export var speed = 0.2
+enum ANIMATION_TYPE 
+{
+	BOUNCE,
+	LOOP
+}
 
+@export var speed:float = 1: set = _set_speed, get = _get_speed
+@export var animation_type:ANIMATION_TYPE = ANIMATION_TYPE.LOOP: set = _set_animation, get = _get_animation
+@onready var animation_player = $AnimationPlayer
+
+func _set_speed(value):
+	speed = value
+	play_animation()
+	
+func _get_speed():
+	return speed
+
+func _set_animation(value):
+	animation_type = value
+	play_animation()
+	
+func _get_animation():
+	return animation_type
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-#func _physics_process(delta):
-#	var cur = path_follow_2d.progress_ratio
-#	cur = cur + delta * speed
-#	path_follow_2d.progress_ratio = cur
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	play_animation()
+	
+func play_animation():
+	animation_player.speed_scale = speed
+	match(animation_type):
+		ANIMATION_TYPE.BOUNCE: animation_player.play("move_bounce")
+		ANIMATION_TYPE.LOOP: animation_player.play("move_loop")
+	

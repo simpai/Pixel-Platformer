@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdlkpcwwfu4g7"]
+[gd_scene load_steps=9 format=3 uid="uid://bdlkpcwwfu4g7"]
 
+[ext_resource type="Script" path="res://scenes/moving_spike_enemy.gd" id="1_flc6w"]
 [ext_resource type="Texture2D" uid="uid://cuexxupt1i1e" path="res://art/tilemap-characters_packed.png" id="2_cfscq"]
 [ext_resource type="PackedScene" uid="uid://h8gv5muchrte" path="res://scenes/hitbox.tscn" id="3_t04x7"]
 
@@ -64,6 +65,8 @@ _data = {
 [node name="MovingSpikeEnemy" type="Path2D"]
 z_index = 5
 curve = SubResource("Curve2D_fhvj6")
+script = ExtResource("1_flc6w")
+speed = null
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false

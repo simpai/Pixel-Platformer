@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3rkbtqyh3tyc"]
+[gd_scene load_steps=11 format=3 uid="uid://3rkbtqyh3tyc"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_ov652"]
 [ext_resource type="PackedScene" uid="uid://drh37855jbrkn" path="res://scenes/player.tscn" id="2_6atan"]
@@ -14,6 +14,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 126, 0, 0, 0, 0, 0, 126, 54, 0, 0, 0, 0, 0, 54, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_68jbr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ov652")
@@ -152,3 +158,10 @@ position = Vector2(180, 126)
 [node name="MovingSpikeEnemy" parent="." instance=ExtResource("8_ydt64")]
 position = Vector2(252, -18)
 curve = SubResource("Curve2D_tfk8g")
+speed = 1.0
+
+[node name="MovingSpikeEnemy2" parent="." instance=ExtResource("8_ydt64")]
+position = Vector2(414, -18)
+curve = SubResource("Curve2D_68jbr")
+speed = 2.0
+animation_type = 0

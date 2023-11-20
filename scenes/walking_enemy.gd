@@ -14,7 +14,7 @@ var xDirection : float = -1
 func _ready():
 	animation_player.play("Walking")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var found_legde = not ledgeCheckL.is_colliding() or not ledgeCheckR.is_colliding()
 
 	if is_on_wall() or found_legde:
