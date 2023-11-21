@@ -30,6 +30,9 @@ position = Vector2(252, 90)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
+current = true
+
 [node name="Player2" parent="." instance=ExtResource("2_6atan")]
 z_index = 10
 position = Vector2(288, 90)
@@ -158,10 +161,13 @@ position = Vector2(180, 126)
 [node name="MovingSpikeEnemy" parent="." instance=ExtResource("8_ydt64")]
 position = Vector2(252, -18)
 curve = SubResource("Curve2D_tfk8g")
-speed = 1.0
 
 [node name="MovingSpikeEnemy2" parent="." instance=ExtResource("8_ydt64")]
 position = Vector2(414, -18)
 curve = SubResource("Curve2D_68jbr")
 speed = 2.0
 animation_type = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MovingSpikeEnemy2"]
+autoplay = true
+max_distance = 300.0

@@ -6,6 +6,9 @@ enum { MOVE, CLIME }
 
 @onready var ladder_check = $LadderCheck
 
+@onready var sound_jump = $SoundJump
+@onready var sound_dead = $SoundDead
+
 @export var data : PlayerData
 @export var playerId = "1p_"
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -83,10 +86,12 @@ func move_state(input:Vector2, delta):
 	if Input.is_action_pressed(playerId+"jump"):
 		if is_on_floor(): # 바닥에 있다면 무조건 점프
 			velocity.y = data.jumpVelocity
+			sound_jump.play()
 		#공중에 있고, 떨어지고 있고, 공중 점프 가능 횟수가 maxAirJump보다 작을 때는 
 		elif velocity.y > 0 and airJumpCount < data.maxAirJump: 
 			airJumpCount += 1
 			velocity.y = data.jumpVelocity
+			sound_jump.play()
 
 
  
@@ -96,4 +101,5 @@ func apply_gravity(delta):
 		velocity.y = move_toward(velocity.y, data.terminalVelocity, gravity * delta)
 
 func hit():
-	queue_free()
+	sound_dead.play()
+	#queue_free()
