@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://drh37855jbrkn"]
+[gd_scene load_steps=5 format=3 uid="uid://drh37855jbrkn"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_i8bog"]
 [ext_resource type="Resource" uid="uid://dujym4n3a42td" path="res://resources/player_data/YellowPlayer.tres" id="2_htqqg"]
 [ext_resource type="SpriteFrames" uid="uid://cpce5dn64x25y" path="res://resources/skin/playerSkinYellow.tres" id="3_t3881"]
-[ext_resource type="AudioStream" uid="uid://crjgpo7j7hmn2" path="res://sound/jump.wav" id="4_0j2ts"]
-[ext_resource type="AudioStream" uid="uid://bqxxc8j1ps0hv" path="res://sound/lose.wav" id="5_ig8dm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8sfs"]
 size = Vector2(14, 14)
@@ -29,11 +27,3 @@ target_position = Vector2(0, -17)
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
-
-[node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_0j2ts")
-max_distance = 500.0
-
-[node name="SoundDead" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ig8dm")
-max_distance = 500.0

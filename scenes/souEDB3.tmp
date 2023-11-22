@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmrb42u7dy27n"]
+
+[ext_resource type="Script" path="res://scenes/sound_player.gd" id="1_y6cgt"]
+[ext_resource type="AudioStream" uid="uid://ctvg0goanymwm" path="res://sound/bgm.mp3" id="2_n0e07"]
+[ext_resource type="AudioStream" uid="uid://d1tuhm5w57gn4" path="res://sound/damage.wav" id="3_niyqb"]
+[ext_resource type="AudioStream" uid="uid://crjgpo7j7hmn2" path="res://sound/jump.wav" id="4_8gsrr"]
+[ext_resource type="AudioStream" uid="uid://bqxxc8j1ps0hv" path="res://sound/lose.wav" id="5_u31gq"]
+[ext_resource type="AudioStream" uid="uid://jivdmtqxxnja" path="res://sound/coin.wav" id="6_cw7cx"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_y6cgt")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("2_n0e07")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+stream = ExtResource("3_niyqb")
+max_polyphony = 3
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+stream = ExtResource("4_8gsrr")
+max_polyphony = 3
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+stream = ExtResource("5_u31gq")
+max_polyphony = 3
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="AudioPlayers"]
+stream = ExtResource("6_cw7cx")
+max_polyphony = 3
