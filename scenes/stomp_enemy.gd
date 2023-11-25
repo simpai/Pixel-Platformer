@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 @onready var ray_cast_2d = $RayCast2D
 @onready var timer = $Timer
@@ -7,6 +7,11 @@ extends Node2D
 
 @export var fall_speed : float = 180
 @export var rise_speed : float = 30
+
+@export var starthover_time : float = 1
+@export var hover_time : float = 3
+@export var down_time : float = 1
+
 
 enum STATE { NONE, HOVER, FALL, LAND, RISE }
 
@@ -17,7 +22,7 @@ var start_position:Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_position = global_position
-	hover_start()
+	hover_start(starthover_time)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,20 +34,21 @@ func _physics_process(delta):
 		STATE.RISE: rise_state(delta)
 
 
-func hover_start():
+func hover_start(time:float):
 	animation_player.play("idle")
 	state = STATE.HOVER
-	timer.start(0.13)
+	timer.start(time)
 
 func fall_start():
 	state = STATE.FALL
 	animation_player.play("fall")
 
 func land_start():
+	AudioPlayer.play_effect(AudioPlayer.HIT, position)
 	gpu_particles_2d.emitting = true
 	animation_player.play("idle")
 	state = STATE.LAND
-	timer.start(0.1)
+	timer.start(down_time)
 
 func rise_start():
 	state = STATE.RISE
@@ -50,6 +56,9 @@ func rise_start():
 	
 
 func hover_state(delta):
+	if timer.time_left <= 1:
+		animation_player.play("shake")
+
 	if timer.time_left == 0:
 		fall_start()
 	
@@ -68,5 +77,5 @@ func rise_state(delta):
 	position.y -= rise_speed * delta
 	if global_position.y <= start_position.y:
 		global_position.y = start_position.y
-		hover_start()
+		hover_start(hover_time)
 			

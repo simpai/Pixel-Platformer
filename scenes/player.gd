@@ -10,11 +10,14 @@ enum { MOVE, CLIME }
 @export var data : PlayerData
 @export var playerId = "1p_"
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var in_water : bool = false
 var airJumpCount:int = 0
 var state = MOVE
 
 func _ready():
+	in_water = false
+	Events.PlayerInWater.connect(set_in_water)
+	
 	$AnimatedSprite2D.sprite_frames = data.spriteFrames
 	$AnimatedSprite2D.play("Idle")
 	
@@ -95,7 +98,14 @@ func move_state(input:Vector2, delta):
 func apply_gravity(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y = move_toward(velocity.y, data.terminalVelocity, gravity * delta)
+		if in_water:
+			velocity.y = move_toward(velocity.y, data.terminalVelocity/5, gravity / 5 * delta)
+		else:
+			velocity.y = move_toward(velocity.y, data.terminalVelocity, gravity * delta)
+
+func set_in_water(on : bool):
+	velocity.y = 0
+	in_water = on
 
 func hit():
 	AudioPlayer.play_effect(AudioPlayer.HIT, position)
