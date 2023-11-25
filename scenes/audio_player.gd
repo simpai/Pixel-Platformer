@@ -1,7 +1,7 @@
 extends Node
 
 @onready var bgm = $Music/BGM
-@onready var sound = $AudioPlayers/sound
+@onready var effects = $Effects
 
 const COIN = preload("res://sound/coin.wav")
 const HIT = preload("res://sound/damage.wav")
@@ -10,7 +10,6 @@ const LOSE = preload("res://sound/lose.wav")
 
 const BGM1 = preload("res://sound/bgm.mp3")
 
-@onready var effects = $Effects
 
 func play_effect(stream, position:Vector2):
 	for effect in effects.get_children():

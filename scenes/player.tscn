@@ -13,17 +13,21 @@ script = ExtResource("1_i8bog")
 data = ExtResource("2_htqqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
 sprite_frames = ExtResource("3_t3881")
 animation = &"Idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_p8sfs")
 
 [node name="LadderCheck" type="RayCast2D" parent="."]
-position = Vector2(0, 13)
+position = Vector2(0, 1)
 target_position = Vector2(0, -17)
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2(0, -12)

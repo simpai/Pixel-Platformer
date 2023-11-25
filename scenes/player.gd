@@ -5,6 +5,7 @@ class_name Player
 enum { MOVE, CLIME }
 
 @onready var ladder_check = $LadderCheck
+@onready var remote_transform_2d = $RemoteTransform2D
 
 @export var data : PlayerData
 @export var playerId = "1p_"
@@ -13,11 +14,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var airJumpCount:int = 0
 var state = MOVE
 
-	
 func _ready():
 	$AnimatedSprite2D.sprite_frames = data.spriteFrames
 	$AnimatedSprite2D.play("Idle")
 	
+func connect_camera(camera_path:NodePath):
+	remote_transform_2d.remote_path = camera_path
 
 func _physics_process(delta):
 	var input = Input.get_vector(
@@ -38,7 +40,6 @@ func is_on_ladder():
 
 func clime_state(input:Vector2, _delta):
 	if not is_on_ladder():
-		print("To move state")
 		state = MOVE
 
 	if input == Vector2.ZERO:
@@ -54,7 +55,6 @@ func move_state(input:Vector2, delta):
 	# transition to clime state
 	if is_on_ladder() :
 		if Input.is_action_pressed(playerId+"up") or velocity.y > 0:  
-			print("To clime state")
 			state = CLIME
 	
 	apply_gravity(delta)
@@ -99,3 +99,5 @@ func apply_gravity(delta):
 
 func hit():
 	AudioPlayer.play_effect(AudioPlayer.HIT, position)
+	Events.PlayerDead.emit(playerId)
+	queue_free()	

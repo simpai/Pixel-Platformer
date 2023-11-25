@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://3rkbtqyh3tyc"]
+[gd_scene load_steps=11 format=3 uid="uid://3rkbtqyh3tyc"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_ov652"]
+[ext_resource type="PackedScene" uid="uid://drh37855jbrkn" path="res://scenes/player.tscn" id="2_6atan"]
+[ext_resource type="Resource" uid="uid://di6tyo7r40ewb" path="res://resources/player_data/PinkPlayer.tres" id="3_ihdyk"]
 [ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/spike.tscn" id="5_ikfb0"]
 [ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/level1_tile_map.tscn" id="5_l451e"]
 [ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/ladder.tscn" id="6_yhgsp"]
 [ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/walking_enemy.tscn" id="7_1iyqc"]
-[ext_resource type="Texture2D" uid="uid://qm322pgdnlfv" path="res://art/tilemap_packed.png" id="7_tp5h1"]
-[ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/check_point.tscn" id="8_kby3t"]
 [ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/moving_spike_enemy.tscn" id="8_ydt64"]
-[ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/stomp_enemy.tscn" id="9_gkyme"]
 
 [sub_resource type="Curve2D" id="Curve2D_tfk8g"]
 _data = {
@@ -24,6 +23,19 @@ point_count = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ov652")
+
+[node name="Player" parent="." instance=ExtResource("2_6atan")]
+z_index = 10
+position = Vector2(252, 90)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
+current = true
+
+[node name="Player2" parent="." instance=ExtResource("2_6atan")]
+z_index = 10
+position = Vector2(288, 90)
+data = ExtResource("3_ihdyk")
+playerId = "2p_"
 
 [node name="TileMap" parent="." instance=ExtResource("5_l451e")]
 position = Vector2(54, 0)
@@ -51,6 +63,9 @@ position = Vector2(126, 162)
 
 [node name="spike5" parent="Spikes" instance=ExtResource("5_ikfb0")]
 position = Vector2(144, 162)
+
+[node name="spike28" parent="Spikes" instance=ExtResource("5_ikfb0")]
+position = Vector2(90, 126)
 
 [node name="spike7" parent="Spikes" instance=ExtResource("5_ikfb0")]
 position = Vector2(234, 162)
@@ -155,36 +170,8 @@ animation_type = 0
 autoplay = true
 max_distance = 300.0
 
-[node name="Camera" type="Node2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(252, 90)
 
-[node name="Camera2D" type="Camera2D" parent="Camera"]
-
-[node name="AudioListener2D" type="AudioListener2D" parent="Camera"]
-current = true
-
-[node name="Start1P" type="Node2D" parent="."]
-position = Vector2(558, 0)
-
-[node name="Start2P" type="Node2D" parent="."]
-position = Vector2(126, 90)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(306, -72)
-texture = ExtResource("7_tp5h1")
-region_enabled = true
-region_rect = Rect2(72, 36, 18, 18)
-
-[node name="CheckPoint" parent="." instance=ExtResource("8_kby3t")]
-position = Vector2(468, 72)
-
-[node name="CheckPoint2" parent="." instance=ExtResource("8_kby3t")]
-position = Vector2(288, 126)
-
-[node name="CheckPoint3" parent="." instance=ExtResource("8_kby3t")]
-position = Vector2(594, 0)
-
-[node name="StompEnemy" parent="." instance=ExtResource("9_gkyme")]
-position = Vector2(144, 0)
-
-[node name="StompEnemy2" parent="." instance=ExtResource("9_gkyme")]
-position = Vector2(90, 36)
+[editable path="Player"]
+[editable path="Player2"]

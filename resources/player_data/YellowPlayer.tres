@@ -7,8 +7,8 @@
 script = ExtResource("1_522d7")
 spriteFrames = ExtResource("2_6nbbq")
 speed = 100.0
-jumpVelocity = -250.0
-maxAirJump = 2
+jumpVelocity = -300.0
+maxAirJump = 1
 terminalVelocity = 400.0
-moveAccel = 200
+moveAccel = 300
 moveDecel = 300
