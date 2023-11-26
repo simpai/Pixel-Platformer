@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duou6fwi44xgi"]
+[gd_scene load_steps=12 format=3 uid="uid://duou6fwi44xgi"]
 
 [ext_resource type="PackedScene" uid="uid://3rkbtqyh3tyc" path="res://scenes/levels/level.tscn" id="1_f28ix"]
 [ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/default_tile_map.tscn" id="2_bgk72"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/enemies/moving_spike_enemy.tscn" id="6_tpxwa"]
 [ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/props/check_point.tscn" id="7_sn0am"]
 [ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/enemies/stomp_enemy.tscn" id="8_12rpk"]
+[ext_resource type="PackedScene" uid="uid://g3ac546p8s47" path="res://scenes/props/door.tscn" id="9_b6cmw"]
 [ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/props/ladder.tscn" id="9_mdc3s"]
 
 [sub_resource type="Curve2D" id="Curve2D_1iyh4"]
@@ -143,5 +144,9 @@ position = Vector2(756, 72)
 
 [node name="ladder2" parent="." index="22" instance=ExtResource("9_mdc3s")]
 position = Vector2(756, 54)
+
+[node name="Door" parent="." index="23" instance=ExtResource("9_b6cmw")]
+position = Vector2(1548, 126)
+move_to_scene = "res://scenes/levels/level1.tscn"
 
 [editable path="MovingSpikeEnemy2"]

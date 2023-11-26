@@ -9,6 +9,7 @@ func _on_body_entered(body):
 	if not body is Player: return
 	if move_to_scene.is_empty(): return
 	
+	await Transitions.play_exit_transition()
 	get_tree().change_scene_to_file(move_to_scene)
 	
 

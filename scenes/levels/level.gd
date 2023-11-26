@@ -3,7 +3,8 @@ extends Node2D
 var player1:Player
 var player2:Player
 
-var player_spawn_pos1:Vector2
+# 플래이어 스폰 포지션
+var player_spawn_pos1:Vector2 
 var player_spawn_pos2:Vector2
 
 @onready var camera = $Camera
@@ -25,6 +26,9 @@ func _ready():
 	create_player2()
 	
 	active_player2()
+	
+	Transitions.play_enter_transition()
+	
 
 func on_player_check_point(id:String, pos:Vector2):
 	if id == "1p_":
