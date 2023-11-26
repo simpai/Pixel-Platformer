@@ -8,7 +8,7 @@ var player_spawn_pos2:Vector2
 
 @onready var camera = $Camera
 
-const player_scene = preload("res://scenes/player.tscn")
+const player_scene = preload("res://scenes/player/player.tscn")
 const player1_data = preload("res://resources/player_data/YellowPlayer.tres")
 const player2_data = preload("res://resources/player_data/PinkPlayer.tres")
 

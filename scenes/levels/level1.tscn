@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bktrl7xncro0j"]
+[gd_scene load_steps=11 format=3 uid="uid://bktrl7xncro0j"]
 
 [ext_resource type="PackedScene" uid="uid://3rkbtqyh3tyc" path="res://scenes/levels/level.tscn" id="1_a26b2"]
-[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/level1_tile_map.tscn" id="2_mevuk"]
-[ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/spike.tscn" id="3_2086n"]
-[ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/walking_enemy.tscn" id="4_4sqaq"]
-[ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/moving_spike_enemy.tscn" id="5_mjwuh"]
-[ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/check_point.tscn" id="6_auoa5"]
-[ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/stomp_enemy.tscn" id="7_701lp"]
+[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/level1_tile_map.tscn" id="2_mevuk"]
+[ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/enemies/spike.tscn" id="3_2086n"]
+[ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/enemies/walking_enemy.tscn" id="4_4sqaq"]
+[ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/enemies/moving_spike_enemy.tscn" id="5_mjwuh"]
+[ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/props/check_point.tscn" id="6_auoa5"]
+[ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/enemies/stomp_enemy.tscn" id="7_701lp"]
+[ext_resource type="PackedScene" uid="uid://g3ac546p8s47" path="res://scenes/props/door.tscn" id="8_j7ef8"]
 
 [sub_resource type="Curve2D" id="Curve2D_wa61d"]
 _data = {
@@ -313,3 +314,7 @@ position = Vector2(738, 36)
 
 [node name="StompEnemy5" parent="." index="19" instance=ExtResource("7_701lp")]
 position = Vector2(504, 18)
+
+[node name="Door" parent="." index="20" instance=ExtResource("8_j7ef8")]
+position = Vector2(1548, 126)
+move_to_scene = "res://scenes/levels/level2.tscn"

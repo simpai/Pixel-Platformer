@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://b73x1gpuynkix"]
 
-[ext_resource type="Script" path="res://Area2D.gd" id="1_jfflq"]
-[ext_resource type="Texture2D" uid="uid://qm322pgdnlfv" path="res://art/tilemap_packed.png" id="2_n254t"]
+[ext_resource type="Script" path="res://scenes/props/check_point.gd" id="1_bpgaq"]
+[ext_resource type="Texture2D" uid="uid://qm322pgdnlfv" path="res://art/tilemap_packed.png" id="2_xnut4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbb4v"]
-atlas = ExtResource("2_n254t")
+atlas = ExtResource("2_xnut4")
 region = Rect2(198, 90, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5hdh"]
-atlas = ExtResource("2_n254t")
+atlas = ExtResource("2_xnut4")
 region = Rect2(216, 90, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_34ujl"]
@@ -31,7 +31,7 @@ size = Vector2(18, 18)
 [node name="CheckPoint" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_jfflq")
+script = ExtResource("1_bpgaq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -9)

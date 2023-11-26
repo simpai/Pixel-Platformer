@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://duou6fwi44xgi"]
 
 [ext_resource type="PackedScene" uid="uid://3rkbtqyh3tyc" path="res://scenes/levels/level.tscn" id="1_f28ix"]
-[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/level1_tile_map.tscn" id="2_bgk72"]
-[ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/spike.tscn" id="4_opjhg"]
-[ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/walking_enemy.tscn" id="5_3nhnu"]
-[ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/moving_spike_enemy.tscn" id="6_tpxwa"]
-[ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/check_point.tscn" id="7_sn0am"]
-[ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/stomp_enemy.tscn" id="8_12rpk"]
-[ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/ladder.tscn" id="9_mdc3s"]
+[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/level1_tile_map.tscn" id="2_bgk72"]
+[ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/enemies/spike.tscn" id="4_opjhg"]
+[ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/enemies/walking_enemy.tscn" id="5_3nhnu"]
+[ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/enemies/moving_spike_enemy.tscn" id="6_tpxwa"]
+[ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/props/check_point.tscn" id="7_sn0am"]
+[ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/enemies/stomp_enemy.tscn" id="8_12rpk"]
+[ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/levels/ladder.tscn" id="9_mdc3s"]
 
 [sub_resource type="Curve2D" id="Curve2D_1iyh4"]
 _data = {
@@ -100,6 +100,9 @@ curve = SubResource("Curve2D_d1ud4")
 speed = 2.0
 animation_type = 0
 
+[node name="PathFollow2D" parent="MovingSpikeEnemy2" index="0"]
+position = Vector2(0, 72.1934)
+
 [node name="CheckPoint" parent="." index="11" instance=ExtResource("7_sn0am")]
 position = Vector2(432, -180)
 
@@ -143,3 +146,5 @@ position = Vector2(756, 72)
 
 [node name="ladder2" parent="." index="23" instance=ExtResource("9_mdc3s")]
 position = Vector2(756, 54)
+
+[editable path="MovingSpikeEnemy2"]

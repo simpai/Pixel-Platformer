@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdlkpcwwfu4g7"]
 
-[ext_resource type="Script" path="res://scenes/moving_spike_enemy.gd" id="1_flc6w"]
-[ext_resource type="Texture2D" uid="uid://cuexxupt1i1e" path="res://art/tilemap-characters_packed.png" id="2_cfscq"]
-[ext_resource type="PackedScene" uid="uid://h8gv5muchrte" path="res://scenes/hitbox.tscn" id="3_t04x7"]
+[ext_resource type="Script" path="res://scenes/enemies/moving_spike_enemy.gd" id="1_ppmm6"]
+[ext_resource type="Texture2D" uid="uid://cuexxupt1i1e" path="res://art/tilemap-characters_packed.png" id="2_ov4b5"]
+[ext_resource type="PackedScene" uid="uid://h8gv5muchrte" path="res://scenes/enemies/hitbox.tscn" id="3_qcr47"]
 
 [sub_resource type="Curve2D" id="Curve2D_fhvj6"]
 
@@ -65,7 +65,7 @@ _data = {
 [node name="MovingSpikeEnemy" type="Path2D"]
 z_index = 5
 curve = SubResource("Curve2D_fhvj6")
-script = ExtResource("1_flc6w")
+script = ExtResource("1_ppmm6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false
@@ -73,12 +73,12 @@ rotates = false
 [node name="Area2D" type="Node2D" parent="PathFollow2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D"]
-texture = ExtResource("2_cfscq")
+texture = ExtResource("2_ov4b5")
 hframes = 9
 vframes = 3
 frame = 8
 
-[node name="Hitbox" parent="PathFollow2D/Area2D" instance=ExtResource("3_t04x7")]
+[node name="Hitbox" parent="PathFollow2D/Area2D" instance=ExtResource("3_qcr47")]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathFollow2D/Area2D/Hitbox"]
