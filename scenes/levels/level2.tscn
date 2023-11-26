@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://duou6fwi44xgi"]
 
 [ext_resource type="PackedScene" uid="uid://3rkbtqyh3tyc" path="res://scenes/levels/level.tscn" id="1_f28ix"]
-[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/level1_tile_map.tscn" id="2_bgk72"]
+[ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/default_tile_map.tscn" id="2_bgk72"]
 [ext_resource type="PackedScene" uid="uid://bbv7366d4ai8r" path="res://scenes/enemies/spike.tscn" id="4_opjhg"]
 [ext_resource type="PackedScene" uid="uid://68p1lb4rpmc8" path="res://scenes/enemies/walking_enemy.tscn" id="5_3nhnu"]
 [ext_resource type="PackedScene" uid="uid://bdlkpcwwfu4g7" path="res://scenes/enemies/moving_spike_enemy.tscn" id="6_tpxwa"]
 [ext_resource type="PackedScene" uid="uid://b73x1gpuynkix" path="res://scenes/props/check_point.tscn" id="7_sn0am"]
 [ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/enemies/stomp_enemy.tscn" id="8_12rpk"]
-[ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/levels/ladder.tscn" id="9_mdc3s"]
+[ext_resource type="PackedScene" uid="uid://cyp7f18tu8ung" path="res://scenes/props/ladder.tscn" id="9_mdc3s"]
 
 [sub_resource type="Curve2D" id="Curve2D_1iyh4"]
 _data = {
@@ -101,50 +101,47 @@ speed = 2.0
 animation_type = 0
 
 [node name="PathFollow2D" parent="MovingSpikeEnemy2" index="0"]
-position = Vector2(0, 72.1934)
+progress = 72.0
 
-[node name="CheckPoint" parent="." index="11" instance=ExtResource("7_sn0am")]
-position = Vector2(432, -180)
-
-[node name="CheckPoint2" parent="." index="12" instance=ExtResource("7_sn0am")]
+[node name="CheckPoint2" parent="." index="11" instance=ExtResource("7_sn0am")]
 position = Vector2(450, 54)
 
-[node name="CheckPoint3" parent="." index="13" instance=ExtResource("7_sn0am")]
+[node name="CheckPoint3" parent="." index="12" instance=ExtResource("7_sn0am")]
 position = Vector2(630, 144)
 
-[node name="CheckPoint4" parent="." index="14" instance=ExtResource("7_sn0am")]
+[node name="CheckPoint4" parent="." index="13" instance=ExtResource("7_sn0am")]
 position = Vector2(1098, 126)
 
-[node name="StompEnemy" parent="." index="15" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy" parent="." index="14" instance=ExtResource("8_12rpk")]
 position = Vector2(504, -18)
 scale = Vector2(2, 2)
 
-[node name="StompEnemy2" parent="." index="16" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy2" parent="." index="15" instance=ExtResource("8_12rpk")]
 position = Vector2(72, 36)
 
-[node name="StompEnemy6" parent="." index="17" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy6" parent="." index="16" instance=ExtResource("8_12rpk")]
 position = Vector2(126, 36)
 starthover_time = 1.5
 
-[node name="StompEnemy7" parent="." index="18" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy7" parent="." index="17" instance=ExtResource("8_12rpk")]
 position = Vector2(180, 36)
 starthover_time = 2.0
 
-[node name="StompEnemy3" parent="." index="19" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy3" parent="." index="18" instance=ExtResource("8_12rpk")]
 position = Vector2(828, -54)
 scale = Vector2(2, 2)
 
-[node name="StompEnemy4" parent="." index="20" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy4" parent="." index="19" instance=ExtResource("8_12rpk")]
 position = Vector2(864, -54)
 scale = Vector2(2, 2)
 
-[node name="StompEnemy5" parent="." index="21" instance=ExtResource("8_12rpk")]
+[node name="StompEnemy5" parent="." index="20" instance=ExtResource("8_12rpk")]
 position = Vector2(684, 54)
 
-[node name="ladder" parent="." index="22" instance=ExtResource("9_mdc3s")]
+[node name="ladder" parent="." index="21" instance=ExtResource("9_mdc3s")]
 position = Vector2(756, 72)
 
-[node name="ladder2" parent="." index="23" instance=ExtResource("9_mdc3s")]
+[node name="ladder2" parent="." index="22" instance=ExtResource("9_mdc3s")]
 position = Vector2(756, 54)
 
 [editable path="MovingSpikeEnemy2"]
