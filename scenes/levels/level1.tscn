@@ -318,3 +318,13 @@ position = Vector2(504, 18)
 [node name="Door" parent="." index="20" instance=ExtResource("8_j7ef8")]
 position = Vector2(1548, 126)
 move_to_scene = "res://scenes/levels/level2.tscn"
+
+[node name="Door2" parent="." index="21" instance=ExtResource("8_j7ef8")]
+position = Vector2(90, 126)
+move_to_scene = "res://scenes/levels/level2.tscn"
+start_pos = "start1"
+
+[node name="Door3" parent="." index="22" instance=ExtResource("8_j7ef8")]
+position = Vector2(126, 126)
+move_to_scene = "res://scenes/levels/level2.tscn"
+start_pos = "start2"

@@ -149,4 +149,16 @@ position = Vector2(756, 54)
 position = Vector2(1548, 126)
 move_to_scene = "res://scenes/levels/level1.tscn"
 
+[node name="Portals" type="Node" parent="." index="24"]
+
+[node name="start1" type="Node2D" parent="Portals" index="0"]
+position = Vector2(18, 126)
+
+[node name="start2" type="Node2D" parent="Portals" index="1"]
+position = Vector2(72, 90)
+
+[node name="Door2" parent="." index="25" instance=ExtResource("9_b6cmw")]
+position = Vector2(234, 54)
+move_to_scene = "res://scenes/levels/level1.tscn"
+
 [editable path="MovingSpikeEnemy2"]

@@ -19,15 +19,21 @@ func _ready():
 	Events.PlayerDead.connect(on_player_dead)
 	Events.PlayerCheckPoint.connect(on_player_check_point)
 	
-	player_spawn_pos1 = $Start1P.global_position
-	player_spawn_pos2 = $Start2P.global_position
+	var startPos:String = Transitions.finish_transition()
+	
+	if startPos.is_empty():
+		player_spawn_pos1 = $Start1P.global_position
+		player_spawn_pos2 = $Start2P.global_position
+	else:
+		player_spawn_pos1 = get_node("Portals/"+startPos).global_position
+		player_spawn_pos2 = get_node("Portals/"+startPos).global_position
 	
 	create_player1()
 	create_player2()
 	
 	active_player2()
 	
-	Transitions.play_enter_transition()
+	
 	
 
 func on_player_check_point(id:String, pos:Vector2):

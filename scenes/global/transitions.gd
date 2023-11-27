@@ -1,13 +1,17 @@
 extends CanvasLayer
 
 @onready var animation_player = $AnimationPlayer
+var startPos:String = ""
 
-func play_exit_transition():
+func start_transition(_startPos:String):
+	startPos = _startPos
 	animation_player.play("ExitLevel")
 	await animation_player.animation_finished
 
-func play_enter_transition():
+func finish_transition():
 	animation_player.play("EnterLevel")
+	return startPos
+		
 
 
 
