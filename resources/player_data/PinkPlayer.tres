@@ -10,5 +10,5 @@ speed = 100.0
 jumpVelocity = -300.0
 maxAirJump = 1
 terminalVelocity = 400.0
-moveAccel = 300
-moveDecel = 300
+moveAccel = 600
+moveDecel = 500

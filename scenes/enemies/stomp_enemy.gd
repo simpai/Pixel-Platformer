@@ -55,7 +55,7 @@ func rise_start():
 	animation_player.play("up")
 	
 
-func hover_state(delta):
+func hover_state(_delta):
 	if timer.time_left <= 1:
 		animation_player.play("shake")
 
@@ -69,7 +69,7 @@ func fall_state(delta):
 		position.y = ray_cast_2d.get_collision_point().y
 		land_start()
 	
-func land_state(delta):
+func land_state(_delta):
 	if timer.time_left == 0:
 		rise_start()
 	

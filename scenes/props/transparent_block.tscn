@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b30m14aspjsqg"]
+
+[ext_resource type="Script" path="res://scenes/props/transparent_block.gd" id="1_kvtn4"]
+[ext_resource type="Texture2D" uid="uid://qm322pgdnlfv" path="res://art/tilemap_packed.png" id="2_esbfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0alj1"]
+size = Vector2(18, 18)
+
+[node name="TransparentBlock" type="StaticBody2D"]
+script = ExtResource("1_kvtn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -9)
+shape = SubResource("RectangleShape2D_0alj1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -9)
+texture = ExtResource("2_esbfa")
+region_enabled = true
+region_rect = Rect2(270, 54, 18, 18)

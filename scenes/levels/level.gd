@@ -14,7 +14,7 @@ const player1_data = preload("res://resources/player_data/YellowPlayer.tres")
 const player2_data = preload("res://resources/player_data/PinkPlayer.tres")
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():#배경화면
 	RenderingServer.set_default_clear_color(Color.DODGER_BLUE)
 	Events.PlayerDead.connect(on_player_dead)
 	Events.PlayerCheckPoint.connect(on_player_check_point)
@@ -49,6 +49,7 @@ func create_player1():
 	add_child(player1)
 	player1.global_position = player_spawn_pos1
 	player1.name = "player1"
+	player1.set_in_water(false)
 
 func create_player2():
 	player2 = player_scene.instantiate()
@@ -57,6 +58,7 @@ func create_player2():
 	add_child(player2)
 	player2.global_position = player_spawn_pos2
 	player2.name = "player2"	
+	player2.set_in_water(false)
 
 func active_player1():
 	print(camera.get_path())
