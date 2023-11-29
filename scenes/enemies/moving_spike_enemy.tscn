@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://h8gv5muchrte" path="res://scenes/enemies/hitbox.tscn" id="3_qcr47"]
 
 [sub_resource type="Curve2D" id="Curve2D_fhvj6"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 18, -18, 0, 0, 0, 0, 234, -18, 0, 0, 0, 0, 234, 36, 0, 0, 0, 0, 18, 36, 0, 0, 0, 0, 18, -18)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0)
 }
-point_count = 5
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_634fe"]
 length = 0.001
@@ -72,7 +73,6 @@ curve = SubResource("Curve2D_fhvj6")
 script = ExtResource("1_ppmm6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(18, -18)
 rotates = false
 
 [node name="Area2D" type="Node2D" parent="PathFollow2D"]
