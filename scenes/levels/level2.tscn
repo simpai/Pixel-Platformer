@@ -144,6 +144,6 @@ position = Vector2(756, 54)
 
 [node name="Door" parent="." index="22" instance=ExtResource("9_b6cmw")]
 position = Vector2(1548, 126)
-move_to_scene = "res://scenes/levels/level_3.tscn"
+move_to_scene = "res://scenes/levels/level1.tscn"
 
 [node name="Portals" type="Node" parent="." index="23"]
