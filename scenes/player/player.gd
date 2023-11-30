@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var in_water : bool = false
 var airJumpCount:int = 0
 var state = MOVE
+var coin = 0
 
 func _ready():
 	in_water = false
@@ -111,3 +112,6 @@ func hit():
 	AudioPlayer.play_effect(AudioPlayer.HIT, position)
 	Events.PlayerDead.emit(playerId)
 	queue_free()	
+
+func get_item():
+	coin += 1
