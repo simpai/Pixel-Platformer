@@ -3,6 +3,9 @@ extends Node2D
 var player1:Player
 var player2:Player
 
+@onready var user_panel_1 = $CanvasLayer/user_panel1
+@onready var user_panel_2 = $CanvasLayer/user_panel2
+
 # 플래이어 스폰 포지션
 var player_spawn_pos1:Vector2 
 var player_spawn_pos2:Vector2
@@ -15,9 +18,12 @@ const player2_data = preload("res://resources/player_data/PinkPlayer.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():#배경화면
+	
 	RenderingServer.set_default_clear_color(Color.DODGER_BLUE)
 	Events.PlayerDead.connect(on_player_dead)
 	Events.PlayerCheckPoint.connect(on_player_check_point)
+	Events.PlayerHealth.connect(on_player_health)
+	Events.GetCoin.connect(on_get_coin)
 	
 	var startPos:String = Transitions.finish_transition()
 	
@@ -28,13 +34,24 @@ func _ready():#배경화면
 		player_spawn_pos1 = get_node("Portals/"+startPos).global_position
 		player_spawn_pos2 = get_node("Portals/"+startPos).global_position
 	
-	create_player1()
+	create_player1()	
 	create_player2()
 	
 	active_player2()
 	
 	
+func on_player_health(id:String):
+	if id == "1p_":
+		user_panel_1.updateHearts(player1.health)
+	elif id == "2p_":
+		user_panel_2.updateHearts(player2.health)
 	
+func on_get_coin(id:String):
+	if id == "1p_":
+		user_panel_1.setCoin(player1.coin)
+	elif id == "2p_":
+		user_panel_2.setCoin(player2.coin)
+
 
 func on_player_check_point(id:String, pos:Vector2):
 	if id == "1p_":
@@ -50,6 +67,10 @@ func create_player1():
 	player1.global_position = player_spawn_pos1
 	player1.name = "player1"
 	player1.set_in_water(false)
+	user_panel_1.setMaxHearts(player1.maxHealth)
+	user_panel_1.updateHearts(player1.health)
+	user_panel_1.setCoin(0)
+
 
 func create_player2():
 	player2 = player_scene.instantiate()
@@ -59,6 +80,9 @@ func create_player2():
 	player2.global_position = player_spawn_pos2
 	player2.name = "player2"	
 	player2.set_in_water(false)
+	user_panel_2.setMaxHearts(player2.maxHealth)
+	user_panel_2.updateHearts(player2.health)
+	user_panel_2.setCoin(0)
 
 func active_player1():
 	print(camera.get_path())

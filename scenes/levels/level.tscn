@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3rkbtqyh3tyc"]
+[gd_scene load_steps=4 format=3 uid="uid://3rkbtqyh3tyc"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_llwta"]
 [ext_resource type="PackedScene" uid="uid://dfrd0ut7kaluq" path="res://scenes/props/water.tscn" id="2_hg6eh"]
+[ext_resource type="PackedScene" uid="uid://b7iusn1t1yiq7" path="res://scenes/GUI/user_panel.tscn" id="3_ytwo4"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_llwta")
@@ -20,3 +21,17 @@ position = Vector2(558, 0)
 position = Vector2(126, 90)
 
 [node name="Water" parent="." instance=ExtResource("2_hg6eh")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="user_panel1" parent="CanvasLayer" instance=ExtResource("3_ytwo4")]
+offset_right = 19.0
+offset_bottom = 52.0
+
+[node name="user_panel2" parent="CanvasLayer" instance=ExtResource("3_ytwo4")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -19.0
+offset_bottom = 52.0
+grow_horizontal = 0

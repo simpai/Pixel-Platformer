@@ -4,6 +4,8 @@ class_name Player
 
 enum { MOVE, CLIME }
 
+@onready var animation_player = $AnimationPlayer
+
 @onready var ladder_check = $LadderCheck
 @onready var remote_transform_2d = $RemoteTransform2D
 
@@ -14,8 +16,12 @@ var in_water : bool = false
 var airJumpCount:int = 0
 var state = MOVE
 var coin = 0
+@export var maxHealth = 3
+var health = 3
 
 func _ready():
+	health = maxHealth
+	coin = 0
 	in_water = false
 	Events.PlayerInWater.connect(set_in_water)
 	
@@ -108,10 +114,23 @@ func set_in_water(on : bool):
 	velocity.y = 0
 	in_water = on
 
+var no_damage = false
 func hit():
+	if no_damage == true: return
+	
+	no_damage = true
 	AudioPlayer.play_effect(AudioPlayer.HIT, position)
-	Events.PlayerDead.emit(playerId)
-	queue_free()	
-
+	health -= 1
+	if health == 0:
+		Events.PlayerDead.emit(playerId)
+		queue_free()	
+	else:
+		Events.PlayerHealth.emit(playerId)
+	animation_player.play("damage")
+	await animation_player.animation_finished
+	no_damage = false
+	
 func get_item():
 	coin += 1
+	Events.GetCoin.emit(playerId)
+	
