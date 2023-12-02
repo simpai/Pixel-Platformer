@@ -115,20 +115,29 @@ func set_in_water(on : bool):
 	in_water = on
 
 var no_damage = false
-func hit():
+func hit(damage : int):
 	if no_damage == true: return
 	
 	no_damage = true
 	AudioPlayer.play_effect(AudioPlayer.HIT, position)
-	health -= 1
-	if health == 0:
+	
+	health -= damage
+
+	Events.PlayerHit.emit(playerId)
+	
+	if health <= 0:
+		animation_player.play("die")
+	else:
+		animation_player.play("damage")
+
+	await animation_player.animation_finished
+
+	no_damage = false
+
+	if health <= 0:
 		Events.PlayerDead.emit(playerId)
 		queue_free()	
-	else:
-		Events.PlayerHealth.emit(playerId)
-	animation_player.play("damage")
-	await animation_player.animation_finished
-	no_damage = false
+
 	
 func get_item():
 	coin += 1

@@ -14,6 +14,7 @@ size = Vector2(3726, 495)
 
 [node name="hitbox - KillZone" parent="." instance=ExtResource("1_2260j")]
 position = Vector2(1480.17, 90.7781)
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox - KillZone"]
 position = Vector2(-508.17, 251.222)

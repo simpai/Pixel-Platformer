@@ -25,10 +25,10 @@ point_count = 2
 
 [node name="Level" instance=ExtResource("1_f28ix")]
 
-[node name="Start1P" parent="." index="1"]
+[node name="Start1P" parent="." index="0"]
 position = Vector2(-36, 126)
 
-[node name="Start2P" parent="." index="2"]
+[node name="Start2P" parent="." index="1"]
 position = Vector2(-18, 126)
 
 [node name="TileMap" parent="." index="3" instance=ExtResource("2_bgk72")]
