@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bktrl7xncro0j"]
+[gd_scene load_steps=15 format=3 uid="uid://bktrl7xncro0j"]
 
 [ext_resource type="PackedScene" uid="uid://3rkbtqyh3tyc" path="res://scenes/levels/level.tscn" id="1_a26b2"]
 [ext_resource type="PackedScene" uid="uid://dc4j34ga0hx6a" path="res://scenes/levels/default_tile_map.tscn" id="2_mevuk"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://g3ac546p8s47" path="res://scenes/props/door.tscn" id="8_j7ef8"]
 [ext_resource type="PackedScene" uid="uid://b30m14aspjsqg" path="res://scenes/props/transparent_block.tscn" id="9_s43gu"]
 [ext_resource type="PackedScene" uid="uid://bmhwfb13tnyym" path="res://scenes/items/coin.tscn" id="10_wvv4j"]
+[ext_resource type="PackedScene" uid="uid://cinrtjkyn2nml" path="res://scenes/enemies/boss_bullet.tscn" id="11_6qve1"]
+[ext_resource type="PackedScene" uid="uid://8j38acmxxl8c" path="res://scenes/enemies/bossBullet.tscn" id="12_b2gln"]
 
 [sub_resource type="Curve2D" id="Curve2D_wa61d"]
 _data = {
@@ -362,3 +364,10 @@ position = Vector2(9, 0)
 
 [node name="item4" parent="Coin" index="2" instance=ExtResource("10_wvv4j")]
 position = Vector2(783, 63)
+
+[node name="bossBullet" parent="." index="25" instance=ExtResource("12_b2gln")]
+position = Vector2(-36, 99)
+
+[node name="boss_bullet" parent="." index="26" instance=ExtResource("11_6qve1")]
+position = Vector2(0, 90)
+speed = 350

@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+class_name HitableEnemy
 
 @export var speed : float = 30
 @onready var ledgeCheckL = $RayCast2DL
 @onready var ledgeCheckR = $RayCast2DR
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var animation_player_hit = $AnimationPlayerHit
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -28,4 +30,16 @@ func _physics_process(_delta):
 
 	velocity.x = xDirection * speed
 	move_and_slide()
+
+var health = 1
+func hit(damage : int):
+	AudioPlayer.play_effect(AudioPlayer.HIT, position)
+	health -= damage
+
+	if health <= 0:
+		animation_player_hit.play("die")
+		await animation_player_hit.animation_finished
+		queue_free()
+	else:
+		animation_player_hit.play("hit")
 

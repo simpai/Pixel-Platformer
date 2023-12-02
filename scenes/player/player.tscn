@@ -114,3 +114,6 @@ position = Vector2(0, -12)
 libraries = {
 "": SubResource("AnimationLibrary_gg2w5")
 }
+
+[node name="fire" type="Node2D" parent="."]
+position = Vector2(0, -11)

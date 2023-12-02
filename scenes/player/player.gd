@@ -4,7 +4,10 @@ class_name Player
 
 enum { MOVE, CLIME }
 
+var bulletScene = preload("res://scenes/player/player_bullet.tscn")
+
 @onready var animation_player = $AnimationPlayer
+@onready var fire = $fire
 
 @onready var ladder_check = $LadderCheck
 @onready var remote_transform_2d = $RemoteTransform2D
@@ -32,6 +35,16 @@ func connect_camera(camera_path:NodePath):
 	remote_transform_2d.remote_path = camera_path
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed(playerId+"fire"):
+		var bullet = bulletScene.instantiate()
+		get_parent().add_child(bullet)
+		var dir:float
+		if $AnimatedSprite2D.flip_h: 
+			bullet.setBullet(fire.global_position, 1, 300)
+		else:
+			bullet.setBullet(fire.global_position, -1, 300)
+
+
 	var input = Input.get_vector(
 		playerId+"left", playerId+"right",
 		playerId+"up", playerId+"down")

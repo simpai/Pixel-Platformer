@@ -10,7 +10,7 @@ var player2:Player
 var player_spawn_pos1:Vector2 
 var player_spawn_pos2:Vector2
 
-#@onready var camera = $Camera
+@onready var camera = $PlayerCenter/Camera
 @onready var player_center = $PlayerCenter
 @onready var camera_2d = $PlayerCenter/Camera/Camera2D
 
@@ -85,18 +85,16 @@ func create_player2():
 	user_panel_2.setCoin(0)
 
 func active_player1():
-#	if player1 != null:
-#		player1.connect_camera(camera.get_path())
-#	if player2 != null:
-#		player2.connect_camera(NodePath())
-	pass
+	if player1 != null:
+		player1.connect_camera(camera.get_path())
+	if player2 != null:
+		player2.connect_camera(NodePath())
 
 func active_player2():
-#	if player1 != null:
-#		player1.connect_camera(NodePath())
-#	if player2 != null:
-#		player2.connect_camera(camera.get_path())
-	pass
+	if player1 != null:
+		player1.connect_camera(NodePath())
+	if player2 != null:
+		player2.connect_camera(camera.get_path())
 
 	
 func on_player_dead(id:String):
@@ -119,28 +117,28 @@ func _process(_delta):
 		active_player2()
 		
 	
-	if player1 == null && player2 == null:
-		cameraZoomTarget = 1
-		pass
-	elif player1 == null:
-		cameraTarget = player2.position
-		cameraZoomTarget = 1
-	elif player2 == null:
-		cameraTarget = player1.position
-		cameraZoomTarget = 1
-	else:
-		cameraTarget = (player1.position + player2.position)/2
-		var baseDistance = 200
-		var distance = abs(player1.position.x - player2.position.x)
-		if  distance > baseDistance:
-			cameraZoomTarget = baseDistance/distance
-		else:
-			cameraZoomTarget = 1
-
-
-	var x = move_toward(player_center.position.x, cameraTarget.x, 500 *_delta)
-	var y = move_toward(player_center.position.y, cameraTarget.y, 500 *_delta)
-	player_center.position = Vector2(x,y)
-	camera_2d.zoom = Vector2.ONE * move_toward(camera_2d.zoom.x, cameraZoomTarget, 1*_delta)
+#	if player1 == null && player2 == null:
+#		cameraZoomTarget = 1
+#		pass
+#	elif player1 == null:
+#		cameraTarget = player2.position
+#		cameraZoomTarget = 1
+#	elif player2 == null:
+#		cameraTarget = player1.position
+#		cameraZoomTarget = 1
+#	else:
+#		cameraTarget = (player1.position + player2.position)/2
+#		var baseDistance = 200
+#		var distance = abs(player1.position.x - player2.position.x)
+#		if  distance > baseDistance:
+#			cameraZoomTarget = baseDistance/distance
+#		else:
+#			cameraZoomTarget = 1
+#
+#
+#	var x = move_toward(player_center.position.x, cameraTarget.x, 500 *_delta)
+#	var y = move_toward(player_center.position.y, cameraTarget.y, 500 *_delta)
+#	player_center.position = Vector2(x,y)
+#	camera_2d.zoom = Vector2.ONE * move_toward(camera_2d.zoom.x, cameraZoomTarget, 1*_delta)
 
 

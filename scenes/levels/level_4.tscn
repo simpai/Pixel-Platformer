@@ -7,42 +7,42 @@
 [ext_resource type="PackedScene" uid="uid://dybue4qgtf7e5" path="res://scenes/enemies/stomp_enemy.tscn" id="5_5a543"]
 [ext_resource type="PackedScene" uid="uid://b2f8lqfj5jkfb" path="res://scenes/enemies/boss.tscn" id="6_7hd0y"]
 
-[sub_resource type="Curve2D" id="Curve2D_u2wb1"]
+[sub_resource type="Curve2D" id="Curve2D_py0r3"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_2cnev"]
+[sub_resource type="Curve2D" id="Curve2D_qa8ru"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_renpi"]
+[sub_resource type="Curve2D" id="Curve2D_qkv8h"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_pqa1t"]
+[sub_resource type="Curve2D" id="Curve2D_vmyta"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_2pg0d"]
+[sub_resource type="Curve2D" id="Curve2D_vxyh6"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_q1a6i"]
+[sub_resource type="Curve2D" id="Curve2D_hung3"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 400, -18, 0, 0, 0, 0, 0, -18)
@@ -62,37 +62,37 @@ layer_0/tile_data = PackedInt32Array(524232, 65536, 4, 524233, 131072, 4, 524234
 
 [node name="MovingSpikeEnemy" parent="." index="5" instance=ExtResource("3_h0k0y")]
 position = Vector2(-504, -13)
-curve = SubResource("Curve2D_u2wb1")
+curve = SubResource("Curve2D_py0r3")
 speed = 0.5
 animation_type = 0
 
 [node name="MovingSpikeEnemy2" parent="." index="6" instance=ExtResource("3_h0k0y")]
 position = Vector2(-18, -13)
-curve = SubResource("Curve2D_2cnev")
+curve = SubResource("Curve2D_qa8ru")
 speed = 0.5
 animation_type = 0
 
 [node name="MovingSpikeEnemy3" parent="." index="7" instance=ExtResource("3_h0k0y")]
 position = Vector2(468, -13)
-curve = SubResource("Curve2D_renpi")
+curve = SubResource("Curve2D_qkv8h")
 speed = 0.5
 animation_type = 0
 
 [node name="MovingSpikeEnemy4" parent="." index="8" instance=ExtResource("3_h0k0y")]
 position = Vector2(954, -13)
-curve = SubResource("Curve2D_pqa1t")
+curve = SubResource("Curve2D_vmyta")
 speed = 0.5
 animation_type = 0
 
 [node name="MovingSpikeEnemy5" parent="." index="9" instance=ExtResource("3_h0k0y")]
 position = Vector2(1458, -13)
-curve = SubResource("Curve2D_2pg0d")
+curve = SubResource("Curve2D_vxyh6")
 speed = 0.5
 animation_type = 0
 
 [node name="MovingSpikeEnemy6" parent="." index="10" instance=ExtResource("3_h0k0y")]
 position = Vector2(1962, -13)
-curve = SubResource("Curve2D_q1a6i")
+curve = SubResource("Curve2D_hung3")
 speed = 0.5
 animation_type = 0
 

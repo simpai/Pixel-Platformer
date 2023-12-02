@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
+class_name Boss
+
 enum STATE { NONE, MOVE, JUMP, ATTACK }
 var state : STATE = STATE.NONE
+var health = 100
 
-const bombScene = preload("res://scenes/enemies/spike_bomb.tscn")
+const bombScene = preload("res://scenes/enemies/boss_bullet.tscn")
 @onready var animation_player = $AnimationPlayer
+@onready var animation_player_hit = $AnimationPlayerHit
 
 const SPEED = 30.0
 const JUMP_VELOCITY = -400.0
@@ -23,6 +27,9 @@ func _ready():
 
 
 func _physics_process(delta):
+	if health <= 0:
+		return
+		
 	match state:
 		STATE.MOVE: move_state(delta)
 		STATE.JUMP: jump_state(delta)
@@ -34,21 +41,18 @@ func _physics_process(delta):
 	move_and_slide()
 		
 func move_start(left:bool):
-	print("move_start")
 	state = STATE.MOVE
 	moveTime = get_random_move_time()
 	moveLeft = left
 	animation_player.play("walking")
 
 func jump_start():
-	print("jump_start")
 	state = STATE.JUMP
 	animation_player.play("jump")
 	velocity.y = -500
 	velocity.x *= 3
 
 func attack_start():
-	print("attack_start")
 	state = STATE.ATTACK
 	velocity.x = 0
 	animation_player.play("spike")
@@ -70,9 +74,9 @@ func jump_state(delta):
 	
 func attack_state(_delta):
 	if animation_player.is_playing() == false:
-		for i in range(6):
+		for i in range(9):
 			var force = randf_range(400,500)
-			var _velocity = Vector2(-force, 0).rotated(deg_to_rad(i*30))
+			var _velocity = Vector2(-force, 0).rotated(deg_to_rad(i*20))
 			var bomb = bombScene.instantiate()
 			get_parent().add_child(bomb)
 			bomb.setBomb(position, _velocity, 3)
@@ -82,7 +86,20 @@ func _on_ai_timer_timeout():
 	select_action()
 		
 func select_action():
-	match randi_range(0,2):
+	match randi_range(0,4):
 		0: move_start(!moveLeft)
 		1: attack_start()
-		2: jump_start()
+		2: attack_start()
+		3: attack_start()
+		4: jump_start()
+
+func hit(damage : int):
+	AudioPlayer.play_effect(AudioPlayer.HIT, position)
+	health -= damage
+
+	if health <= 0:
+		animation_player_hit.play("die")
+		await animation_player_hit.animation_finished
+		queue_free()
+	else:
+		animation_player_hit.play("hit")
