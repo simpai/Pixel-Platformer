@@ -32,6 +32,7 @@ grow_horizontal = 0
 [node name="PlayerCenter" type="Node2D" parent="."]
 
 [node name="Camera" type="Node2D" parent="PlayerCenter"]
+position = Vector2(0, -20)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCenter/Camera"]
 
